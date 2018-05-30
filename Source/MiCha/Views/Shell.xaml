@@ -17,6 +17,7 @@
                    Background="{DynamicResource ThemeBrushKey}"
                    FontFamily="Segoe UI"
                    IsRestoringWindowPlacement="True"
+                   SnapsToDevicePixels="True"
                    TextOptions.TextFormattingMode="Display"
                    UseLayoutRounding="True"
                    mc:Ignorable="d">
@@ -45,9 +46,9 @@
                 </Grid.ColumnDefinitions>
                 <metro:CaptionIcon Grid.Column="0" />
                 <TextBlock Grid.Column="1"
-                           Margin="3,0,0,0"
+                           Margin="3,5,0,0"
                            VerticalAlignment="Center"
-                           FontFamily="Segoe UI Light"
+                           FontFamily="Meiryo UI"
                            FontSize="13"
                            Foreground="{DynamicResource ForegroundBrushKey}"
                            Text="{Binding Title.Value}"
