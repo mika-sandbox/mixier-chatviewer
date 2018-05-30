@@ -1,2 +1,2 @@
 # MiCha
-Mixer Chat Viewer for Windows.
+Mixer Chat Viewer with BouyomiChan for Windows.
