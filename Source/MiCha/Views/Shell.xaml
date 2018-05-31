@@ -66,6 +66,10 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Margin="5,0,0,0"
+                       VerticalAlignment="Center"
+                       Text="{Binding Status.Value, Mode=OneWay}" />
             <metro:ResizeGrip Grid.Column="1" />
         </Grid>
     </Grid>
