@@ -1,16 +1,20 @@
-﻿using Reactive.Bindings;
+﻿using MiCha.Extensions;
+using MiCha.Models;
+using MiCha.Services;
+
+using Reactive.Bindings;
 
 namespace MiCha.ViewModels
 {
-    public class ShellViewModel
+    public class ShellViewModel : ViewModel
     {
         public ReactiveProperty<string> Title { get; }
-        public ReactiveProperty<string> Status { get; }
+        public ReadOnlyReactiveProperty<string> Status { get; }
 
-        public ShellViewModel()
+        public ShellViewModel(IStatusTextService statusTextService)
         {
             Title = new ReactiveProperty<string>("MiCha");
-            Status = new ReactiveProperty<string>("Ready");
+            Status = statusTextService.Text.ToReadOnlyReactiveProperty().AddTo(this);
         }
     }
 }

@@ -33,8 +33,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="150" />
-            <RowDefinition Height="23" />
+            <RowDefinition Height="25" />
         </Grid.RowDefinitions>
         <Border Grid.Row="0"
                 metro:MetroWindow.IsCaptionBar="True">
@@ -60,7 +59,9 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <Grid Grid.Row="3"
+        <ContentControl Grid.Row="1"
+                        prism:RegionManager.RegionName="ContentRegion" />
+        <Grid Grid.Row="2"
               Background="{DynamicResource AccentBrushKey}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
