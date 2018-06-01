@@ -9,6 +9,7 @@
                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                    xmlns:metro="http://schemes.grabacr.net/winfx/2014/controls"
                    xmlns:prism="http://prismlibrary.com/"
+                   xmlns:tabs="clr-namespace:MiCha.Views.Tabs"
                    xmlns:viewModels="clr-namespace:MiCha.ViewModels"
                    Title="{Binding Title.Value}"
                    Width="1344"
@@ -46,12 +47,10 @@
                 </Grid.ColumnDefinitions>
                 <metro:CaptionIcon Grid.Column="0"
                                    Padding="4,2">
-                    <!--
                     <Image Width="24"
                            Height="24"
                            RenderOptions.BitmapScalingMode="Fant"
-                           Source="../Resources/MiCha2.ico" />
-                    -->
+                           Source="../Resources/Kotoha2.ico" />
                 </metro:CaptionIcon>
                 <TextBlock Grid.Column="1"
                            Margin="3,0,0,0"
@@ -92,6 +91,13 @@
             </TabItem>
             <TabItem>
                 <TabItem.Header>
+                    <TextBlock fa:Awesome.Inline=":Plug: Plugins" />
+                </TabItem.Header>
+                <TextBlock Margin="10"
+                           Text="C" />
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
                     <TextBlock fa:Awesome.Inline=":Cogs: Settings" />
                 </TabItem.Header>
                 <TextBlock Margin="10"
@@ -101,8 +107,7 @@
                 <TabItem.Header>
                     <TextBlock fa:Awesome.Inline=":InfoCircle: About" />
                 </TabItem.Header>
-                <TextBlock Margin="10"
-                           Text="C" />
+                <tabs:AboutTab Margin="10" />
             </TabItem>
         </TabControl>
         <Grid Grid.Row="2"

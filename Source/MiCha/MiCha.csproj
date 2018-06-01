@@ -137,10 +137,16 @@
     </ApplicationDefinition>
     <Compile Include="Actions\DataContextDisposeAction.cs" />
     <Compile Include="Extensions\IDisposableExtension.cs" />
+    <Compile Include="Extensions\ReleaseExtensions.cs" />
+    <Compile Include="Models\ProductInfo.cs" />
+    <Compile Include="Models\License.cs" />
+    <Compile Include="Models\Release.cs" />
     <Compile Include="Models\ViewModel.cs" />
     <Compile Include="Services\IStatusTextService.cs" />
     <Compile Include="Services\StatusTextService.cs" />
+    <Compile Include="ViewModels\LicenseViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
+    <Compile Include="ViewModels\Tabs\AboutTabViewModel.cs" />
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
     </Compile>
@@ -149,6 +155,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Views\Tabs\AboutTab.xaml.cs">
+      <DependentUpon>AboutTab.xaml</DependentUpon>
+    </Compile>
     <Page Include="Styles\Controls.TabControl.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
@@ -159,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Tabs\AboutTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +206,9 @@
   <ItemGroup>
     <Folder Include="Behaviors\" />
     <Folder Include="Converters\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Kotoha2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
