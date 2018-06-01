@@ -4,6 +4,7 @@
                    xmlns:actions="clr-namespace:MiCha.Actions"
                    xmlns:chrome="http://schemes.grabacr.net/winfx/2014/chrome"
                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                    xmlns:metro="http://schemes.grabacr.net/winfx/2014/controls"
@@ -43,9 +44,17 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <metro:CaptionIcon Grid.Column="0" />
+                <metro:CaptionIcon Grid.Column="0"
+                                   Padding="4,2">
+                    <!--
+                    <Image Width="24"
+                           Height="24"
+                           RenderOptions.BitmapScalingMode="Fant"
+                           Source="../Resources/MiCha2.ico" />
+                    -->
+                </metro:CaptionIcon>
                 <TextBlock Grid.Column="1"
-                           Margin="3,5,0,0"
+                           Margin="3,0,0,0"
                            VerticalAlignment="Center"
                            FontFamily="Meiryo UI"
                            FontSize="13"
@@ -59,8 +68,43 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <ContentControl Grid.Row="1"
-                        prism:RegionManager.RegionName="ContentRegion" />
+        <TabControl Grid.Row="1"
+                    Background="{DynamicResource BackgroundBrushKey}"
+                    BorderThickness="0"
+                    SelectedIndex="{Binding SelectedIndex}">
+            <TabControl.Resources>
+                <Style BasedOn="{StaticResource FlatStyleTabItem}"
+                       TargetType="TabItem" />
+                <Style BasedOn="{StaticResource HorizontalFlatStyleTabTextBlock}"
+                       TargetType="TextBlock" />
+            </TabControl.Resources>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock fa:Awesome.Inline=":Home: Home" />
+                </TabItem.Header>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock fa:Awesome.Inline=":Key: Accounts" />
+                </TabItem.Header>
+                <TextBlock Margin="10"
+                           Text="B" />
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock fa:Awesome.Inline=":Cogs: Settings" />
+                </TabItem.Header>
+                <TextBlock Margin="10"
+                           Text="C" />
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock fa:Awesome.Inline=":InfoCircle: About" />
+                </TabItem.Header>
+                <TextBlock Margin="10"
+                           Text="C" />
+            </TabItem>
+        </TabControl>
         <Grid Grid.Row="2"
               Background="{DynamicResource AccentBrushKey}">
             <Grid.ColumnDefinitions>
@@ -68,7 +112,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0"
-                       Margin="5,0,0,0"
+                       Margin="10,0,0,0"
                        VerticalAlignment="Center"
                        Text="{Binding Status.Value, Mode=OneWay}" />
             <metro:ResizeGrip Grid.Column="1" />
