@@ -102,8 +102,8 @@
                                 <Run Text="{Binding Url, Mode=OneWay}" />
                             </Hyperlink>
                         </TextBlock>
-                        <TextBlock Visibility="{Binding}">
-                            <Run>Authors :</Run>
+                        <TextBlock Visibility="{Binding IsShowAuthors, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <Run>Author(s) :</Run>
                             <Run Text="{Binding Authors, Mode=OneWay}" />
                         </TextBlock>
                     </StackPanel>
