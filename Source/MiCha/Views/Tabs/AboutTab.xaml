@@ -85,28 +85,34 @@
             </TabControl.ItemTemplate>
             <TabControl.ContentTemplate>
                 <DataTemplate DataType="{x:Type vmroot:LicenseViewModel}">
-                    <StackPanel Margin="10,5"
-                                Orientation="Vertical">
-                        <StackPanel.Resources>
-                            <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="Foreground" Value="{DynamicResource ForegroundBrushKey}" />
-                            </Style>
-                        </StackPanel.Resources>
-                        <TextBlock FontSize="20"
-                                   Text="{Binding Name}"
-                                   TextTrimming="CharacterEllipsis" />
-                        <TextBlock>
-                            <Run>Project Home :</Run>
-                            <Hyperlink Command="{Binding OpenHyperlinkCommand}"
-                                       NavigateUri="{Binding Url, Mode=OneWay}">
-                                <Run Text="{Binding Url, Mode=OneWay}" />
-                            </Hyperlink>
-                        </TextBlock>
-                        <TextBlock Visibility="{Binding IsShowAuthors, Converter={StaticResource BooleanToVisibilityConverter}}">
-                            <Run>Author(s) :</Run>
-                            <Run Text="{Binding Authors, Mode=OneWay}" />
-                        </TextBlock>
-                    </StackPanel>
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel Margin="10,5"
+                                    Orientation="Vertical">
+                            <StackPanel.Resources>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Foreground" Value="{DynamicResource ForegroundBrushKey}" />
+                                </Style>
+                            </StackPanel.Resources>
+                            <TextBlock FontSize="20"
+                                       Text="{Binding Name}"
+                                       TextTrimming="CharacterEllipsis" />
+                            <TextBlock>
+                                <Run>Project Home :</Run>
+                                <Hyperlink Command="{Binding OpenHyperlinkCommand}"
+                                           NavigateUri="{Binding Url, Mode=OneWay}">
+                                    <Run Text="{Binding Url, Mode=OneWay}" />
+                                </Hyperlink>
+                            </TextBlock>
+                            <TextBlock Visibility="{Binding IsShowAuthors, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                <Run>Author(s) :</Run>
+                                <Run Text="{Binding Authors, Mode=OneWay}" />
+                            </TextBlock>
+                            <Separator />
+                            <TextBlock Text="{Binding LicenseBody, Mode=OneWay}"
+                                       TextWrapping="WrapWithOverflow" />
+                        </StackPanel>
+
+                    </ScrollViewer>
                 </DataTemplate>
             </TabControl.ContentTemplate>
         </TabControl>

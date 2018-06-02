@@ -15,6 +15,7 @@ namespace MiCha.ViewModels
         public string Name => _license.Name;
         public string Authors => string.Join(", ", _license.Authors);
         public bool IsShowAuthors => !string.IsNullOrWhiteSpace(Authors);
+        public string LicenseBody => _license.Body.Substring(2); // First character must be NewLine
 
         public LicenseViewModel(License license)
         {

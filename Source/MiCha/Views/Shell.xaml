@@ -107,7 +107,7 @@
                 <TabItem.Header>
                     <TextBlock fa:Awesome.Inline=":InfoCircle: About" />
                 </TabItem.Header>
-                <tabs:AboutTab Margin="10" />
+                <tabs:AboutTab Margin="10,10,0,0" />
             </TabItem>
         </TabControl>
         <Grid Grid.Row="2"
