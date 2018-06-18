@@ -133,7 +133,7 @@ to represent the company, product, or service to which they refer.**"
             },
             new License
             {
-                Name = "ReactiveProperty (Modified for System.Reactive Version 4.x)",
+                Name = "ReactiveProperty",
                 Url = "https://github.com/runceel/ReactiveProperty",
                 Authors = new[] {"neuecc", "xin9le", "okazuki"},
                 Body = License.MIT.Replace("{yyyy}", "2018").Replace("{name of copyright owner}", "neuecc, xin9le, okazuki")
